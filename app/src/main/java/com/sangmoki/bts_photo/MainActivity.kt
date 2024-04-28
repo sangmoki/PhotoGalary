@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         for (i in imageIds.indices) {
             findViewById<ImageView>(imageIds[i]).setOnClickListener {
                 val intent = Intent(this, activityClasses[i])
+                // 넘겨줄 데이터 설정
+                intent.putExtra("data", i + 1)
+                println(intent.extras?.get("data"))
                 startActivity(intent)
             }
         }
